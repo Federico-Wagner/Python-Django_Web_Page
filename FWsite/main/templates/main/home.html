@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>home</title>
+    {% endblock %}
+</head>
+<body>
+    {% comment %}
+    home is pasing base its blocks to render if nothing is
+    passed to base will display default
+    {% endcomment %}
+
+    {% block header %}
+    <h3>About me:</h3>
+    {% endblock %}
+
+    {% block text %}
+    <p>Hi thie is FW this is my first Web page. Hope you enjoy it</p>
+    {% endblock %}
+</body>
+</html>
