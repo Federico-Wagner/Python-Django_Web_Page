@@ -9,15 +9,20 @@ def index(response):
 """
 
 def base(response):
-	#ls = TodoList.objects.get(name=name) #dynamic url from database object HERE
 	return render(response, "main/base.html", {})
 
 def home(response):
-	#return HttpResponse("<h1>HOME: FW site</h1>")
-	arr_1 = [1, 2, 3]
-	arr_2 = [4, 5, 6]
-	return render(response, "main/home.html", {"arr_1":arr_1, "arr_2":arr_2})
+	return render(response, "main/home.html", {})
+
+def about(response):
+	return render(response, "main/about.html", {})
 
 def navbar(response):
 	#return HttpResponse("<h1>HOME: FW site</h1>")
 	return render(response, "main/navbar.html", {})
+
+def sign_in(response):
+	return render(response, "main/sign_in.html", {})
+
+"""def sign_up(response):
+	return render(response, "main/sign_up.html", {})"""

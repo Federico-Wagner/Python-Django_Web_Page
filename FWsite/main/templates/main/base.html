@@ -3,44 +3,22 @@
 <head>
     <meta charset="UTF-8">
     {% block title %}
-    <title>base</title>
+    <title>FW - base</title>
     {% endblock %}
 </head>
 <body>
     <h1>Federico's WebPage</h1>
-    <P>I'm the base template and i'm giving this format to the
-        Web Page</P>
     <hr>
     {% include 'main/navbar.html' %}
     <hr>
+
     {% block header %}
-    <p>Error:header block did´t get any info</p>
+    <p>Error:header block - Empty</p>
     {% endblock %}
 
-    {% block text %}
-    <p>Error:text block did´t get any info</p>
+    {% block body %}
+    <p>Error: Body block - Empty</p>
     {% endblock %}
-
-    <p>lista 1: {{arr_1}}</p>
-    <p>lista 2: {{arr_2}}</p>
-
-    <ul>
-        {% for number in arr_1 %}
-            <li>{{ number }}</li>
-        {%endfor %}
-
-        {% for number in arr_2 %}
-            {% if number == 4 or number == 5 %}
-                <li>{{ number }}</li>
-            {% endif %}
-        {%endfor %}
-    </ul>
-
-
-    {% comment %}
-    <ul>  me da un indentado en el navegador web
-        <li> genera un punto de item
-    {% endcomment %}
 
 </body>
 </html>

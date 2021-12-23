@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main.apps.MainConfig',         #for SQL? -informa a Django que hay una app de nombre main instalada
+    'register.apps.RegisterConfig',
 ]
 
 MIDDLEWARE = [
