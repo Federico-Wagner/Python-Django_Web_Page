@@ -12,6 +12,10 @@
     {% include 'main/navbar.html' %}
     <hr>
 
+    {% if not user.is_authenticated %}
+        <p>You are not logged in, please log in to access all the content</p>
+    {% endif %}
+
     {% block header %}
     <p>Error:header block - Empty</p>
     {% endblock %}

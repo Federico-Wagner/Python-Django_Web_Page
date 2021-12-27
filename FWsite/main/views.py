@@ -21,8 +21,8 @@ def navbar(response):
 	#return HttpResponse("<h1>HOME: FW site</h1>")
 	return render(response, "main/navbar.html", {})
 
-def sign_in(response):
-	return render(response, "main/sign_in.html", {})
+"""def log_in(response):
+	return render(response, "main/log_in.html", {})"""
 
 """def sign_up(response):
 	return render(response, "main/sign_up.html", {})"""

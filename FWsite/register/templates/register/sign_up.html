@@ -4,19 +4,24 @@
 <head>
     <meta charset="UTF-8">
     {% block title %}
-    <title>FW - Sign UP</title>
+        <title>FW - Sign UP</title>
     {% endblock %}
 </head>
 <body>
 
+    {% load crispy_forms_tags %}
+
     {% block header %}
-    <h3>Sign UP</h3>
+        <h3>Sign UP</h3>
     {% endblock %}
 
     {% block body %}
-    <h5>Register:</h5>
-    <p>Please create an account</p>
+        <p>Create your account:</p>
+        <form method="POST" class="form-group">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-success">Register</button>
+        </form>
     {% endblock %}
-
 </body>
 </html>
