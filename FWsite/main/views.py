@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import TodoList, Item
 # Create your views here.
@@ -12,7 +12,8 @@ def base(response):
 	return render(response, "main/base.html", {})
 
 def home(response):
-	return render(response, "main/home.html", {})
+	list_array = TodoList.objects.all() #Data Base querry
+	return render(response, "main/home.html", {"list_array":list_array})
 
 def about(response):
 	return render(response, "main/about.html", {})
@@ -21,8 +22,15 @@ def navbar(response):
 	#return HttpResponse("<h1>HOME: FW site</h1>")
 	return render(response, "main/navbar.html", {})
 
-"""def log_in(response):
-	return render(response, "main/log_in.html", {})"""
+def list(response,list_number):# I recive number variable, from the url
+	obj = get_object_or_404(TodoList,id = list_number)  #Django built in shortcut
+	args = {"list_number": list_number,
+			"list_obj":obj}
+	return render(response, "main/list_view.html", args)
 
-"""def sign_up(response):
-	return render(response, "main/sign_up.html", {})"""
+
+def list_detail(response,list_number):# I recive number variable, from the url
+	list_obj = TodoList.objects.filter(id=list_number) #returns a list only one match
+	args = {"list_number": list_number,
+			"list_obj":list_obj[0],}
+	return render(response, "main/list_view_detail.html", args)

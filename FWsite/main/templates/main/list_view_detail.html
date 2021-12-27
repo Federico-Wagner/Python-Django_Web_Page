@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>FW - List</title>
+    {% endblock %}
+</head>
+<body>
+
+    {% block header %}
+    <h3>List detail view</h3>
+    {% endblock %}
+
+    {% block body %}
+    <p>ID number: &emsp; {{list_number}}</p>
+    <p>List name: &emsp; {{list_obj.name}}</p>
+    <p>Creation date: &emsp; {{list_obj.creation_date}}</p>
+    <a href="http://127.0.0.1:8000/list/{{list_number}}">Go back</a>
+    {% endblock %}
+
+</body>
+</html>

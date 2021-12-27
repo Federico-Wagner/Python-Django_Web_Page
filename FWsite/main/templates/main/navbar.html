@@ -23,13 +23,13 @@ navtag a {
 <body>
 <ul class="navbar">
   {% if user.is_authenticated %}
-  <navtag><a href="http://127.0.0.1:8000/home">Home</a></navtag>
-  <navtag><li><a href="http://127.0.0.1:8000/about">About</a></li></navtag>
+  <navtag><a href="{% url 'main:home' %}">Home</a></navtag>
+  <navtag><li><a href="{% url 'main:about' %}">About</a></li></navtag>
   <navtag><li><a>User_name</a></li></navtag>
-  <navtag><li><a href="http://127.0.0.1:8000/logout">Logout</a></li></navtag>
+  <navtag><li><a href="{% url 'logout' %}">Logout</a></li></navtag>
   {% else %}
-  <navtag><a href="http://127.0.0.1:8000/home">Home</a></navtag>
-  <navtag><li><a href="http://127.0.0.1:8000/about">About</a></li></navtag>
+  <navtag><a href="{% url 'main:home' %}">Home</a></navtag>
+  <navtag><li><a href="{% url 'main:about' %}">About</a></li></navtag>
   <navtag><li><a href="http://127.0.0.1:8000/register/log_in">Log In</a></li></navtag>
   <navtag><li><a href="http://127.0.0.1:8000/register/sign_up">Sign Up</a></li></navtag>
   {% endif %}
