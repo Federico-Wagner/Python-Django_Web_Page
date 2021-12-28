@@ -10,13 +10,30 @@
 <body>
 
     {% block header %}
-    <h3>List detail view</h3>
+    <h3>List detail view: {{list_obj.name}}</h3>
     {% endblock %}
 
     {% block body %}
     <p>ID number: &emsp; {{list_number}}</p>
     <p>List name: &emsp; {{list_obj.name}}</p>
     <p>Creation date: &emsp; {{list_obj.creation_date}}</p>
+
+
+    <p>List contents:</p>
+    <p>task name &emsp; &emsp; creation date &emsp; &emsp; &emsp; priority &emsp; state</p>
+    {% for task in tasks %}
+    <li>
+        <a>{{task.text}}</a>
+        &emsp;
+        <a>{{task.creation_date}}</a>
+        &emsp;
+        <a>{{task.priority}}</a>
+        &emsp;
+        <a>{{task.complete}}</a>
+    </li>
+    {% endfor %}
+
+    <hr>
     <a href="http://127.0.0.1:8000/list/{{list_number}}">Go back</a>
     {% endblock %}
 

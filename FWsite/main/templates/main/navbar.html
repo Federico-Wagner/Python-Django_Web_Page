@@ -1,37 +1,23 @@
 <!DOCTYPE html>
-<style>
-.navbar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-navtag {
-  float: left;
-}
-navtag a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-</style>
 
 <html>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+
 <body>
 <ul class="navbar">
   {% if user.is_authenticated %}
   <navtag><a href="{% url 'main:home' %}">Home</a></navtag>
   <navtag><li><a href="{% url 'main:about' %}">About</a></li></navtag>
-  <navtag><li><a>User_name</a></li></navtag>
   <navtag><li><a href="{% url 'logout' %}">Logout</a></li></navtag>
+  <navtag><li><a href="{% url 'admin:index' %}">Admin</a></li></navtag>
+  <navtag><li><a>Welcome: {{user}}</a></li></navtag>
   {% else %}
   <navtag><a href="{% url 'main:home' %}">Home</a></navtag>
   <navtag><li><a href="{% url 'main:about' %}">About</a></li></navtag>
-  <navtag><li><a href="http://127.0.0.1:8000/register/log_in">Log In</a></li></navtag>
+  <navtag><li><a href="http://127.0.0.1:8000/login">Log In</a></li></navtag>
   <navtag><li><a href="http://127.0.0.1:8000/register/sign_up">Sign Up</a></li></navtag>
+  <navtag><li><a href="{% url 'admin:index' %}">Admin</a></li></navtag>
   {% endif %}
 </ul>
 </body>

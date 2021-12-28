@@ -1,0 +1,35 @@
+h1 {
+  color: #007acc;
+  margin-left: 20px;
+}
+
+li a {
+    color: green;
+}
+
+body {
+    width: 550px;
+    background: white url("images/background.gif") no-repeat;
+    background-size:550px 200px;
+}
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 5;
+  overflow: hidden;
+  background-color: #333;
+}
+navtag {
+  float: left;
+}
+navtag a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+
